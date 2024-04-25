@@ -22,7 +22,7 @@ def chain(Xs = [0.5, 9.5], Ys = [0, 0.01], frames = 150, num_linspace = 10000):
     T = np.arange(frames)
     anim = animation.FuncAnimation(fig, frame, T)
     writergif = animation.PillowWriter(fps=30)
-    anim.save('animation.gif',writer=writergif)
+    anim.save('animation_chain.gif',writer=writergif)
 
     plt.show()
     
