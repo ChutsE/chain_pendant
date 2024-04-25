@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 from catenaria import catenaria
 import numpy as np
 
-def chain(Xs = [0.5, 9.5], Ys = [0, 0.01], frames = 40, num_linspace = 10000):
+def chain(Xs = [0.5, 9.5], Ys = [0, 0.01], frames = 150, num_linspace = 10000):
     fig = plt.figure()
     ax = fig.gca()
     xs = np.linspace(Xs[0], Xs[1], frames)
@@ -21,6 +21,9 @@ def chain(Xs = [0.5, 9.5], Ys = [0, 0.01], frames = 40, num_linspace = 10000):
         
     T = np.arange(frames)
     anim = animation.FuncAnimation(fig, frame, T)
+    writergif = animation.PillowWriter(fps=30)
+    anim.save('animation.gif',writer=writergif)
+
     plt.show()
-    #anim.save("animation.mp4", writer= 'ffmpeg')
+    
 chain()

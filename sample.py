@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 import math
-def chain(Xs = [3, 5], Ys = [0, 2], steps = 20):
+def chain(Xs = [3, 4], Ys = [0, 2], steps = 20):
     fig = plt.figure()
     ax = fig.gca()
     xs = np.arange(Xs[0], Xs[1], (Xs[1]-Xs[0])/steps)
@@ -13,7 +13,7 @@ def chain(Xs = [3, 5], Ys = [0, 2], steps = 20):
 
     def frame(t):
         ax.clear()
-        plt.xlim(-1, 5)
+        plt.xlim(-1, 4)
         plt.ylim(-3, 2)
 
         alpha = math.sqrt( ((len_chain**2)/((ys[t]**2)+(xs[t]**2))) - 1 )
